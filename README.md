@@ -49,15 +49,14 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
  
  <img src="images/gun_deaths_per_person.png" width="640" height="480">
  
+ Here's a quick look at the states with the highest and lowest differences between the number of deaths observed and the number of deaths predicted by population:
  
- And a kernel density estimate plot that shows the country's biggest hotspots for gun-related deaths. Some of the clearest points of concentration occur in the Chicago, Baltimore/DC, and Atlanta areas:
+ <img src="images/highest_lowest.jpg" width="700" height="700">
+ 
+ And finally, a kernel density estimate plot that shows the country's biggest hotspots for gun-related deaths. Some of the clearest points of concentration occur in the Chicago, Baltimore/DC, and Atlanta areas:
  
  ![](images/kde_map.jpeg)
  
- 
- And finally, here's a quick look at the states with the highest and lowest differences between the number of deaths observed and the number of deaths predicted by population:
- 
- <img src="images/highest_lowest.jpg" width="700" height="700">
  
  ## How does the death rate change, if at all, when an assault weapon is used?
  
