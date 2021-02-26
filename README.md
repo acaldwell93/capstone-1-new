@@ -51,7 +51,7 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
  
  <img src="images/gun_deaths_per_person.png" width="640" height="480">
  
- Here's a quick look at the states with the highest and lowest differences between the number of deaths observed and the number of deaths predicted by population:
+ Here's a quick look at the states with the largest positive and negative differences between the number of deaths observed and the number of deaths predicted by population:
  
  ![](images/highest_lowest_2.png)
  
