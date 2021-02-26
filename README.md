@@ -47,7 +47,7 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
  
  With such a large test statistic, our p-value is virtually zero. This allows us to reject the null hypothesis that a state's population alone is a sufficient predictor of gun violence deaths. Here are a couple more geographical visualizations that may help further drive home this point:
  
- ![](images/gun_deaths_per_person.png)
+ <img src="images/gun_deaths_per_person.jpg" width="700" height="700">
  
  
  And a kernel density estimate plot that shows the country's biggest hotspots for gun-related deaths. Some of the clearest points of concentration occur in the Chicago, Baltimore/DC, and Atlanta areas:
