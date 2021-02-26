@@ -86,12 +86,6 @@ Let's perform this test with an old-school Central Limit Theorem approach. We ca
 
 Here, we see a very tight spread centered at about .31 deaths per incident. It makes sense, given our very large sample size of over 190,000, that this distribution has a small standard deviation. Let's now see how this compares to our distribution for assault weapon incidents.
 
-Null: mu1 = mu2
-
-Alternative: mu2 > mu1
-
-alpha = 0.05
-
 ![](images/CLT_both.png)
 
 Here we see a pretty clear picture. The assault weapon distribution clearly has a larger spread, a combination of the fact that the sample size is much smaller (just under 800) and that assault weapon incidents may have naturally a higher degree of variability in death rates. Nevertheless, it's visually clear that these two distributions don't meaningfully overlap. But just for good measure, let's do a Welch's t-test:
