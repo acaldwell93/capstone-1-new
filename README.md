@@ -51,7 +51,7 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
  
  Here's a quick look at the states with the highest and lowest differences between the number of deaths observed and the number of deaths predicted by population:
  
- <img src="images/highest_lowest.jpg" width="700" height="700">
+ ![](images/highest_lowest_2.png)
  
  And finally, a kernel density estimate plot that shows the country's biggest hotspots for gun-related deaths. Some of the clearest points of concentration occur in the Chicago, Baltimore/DC, and Atlanta areas:
  
@@ -111,9 +111,12 @@ We see a pretty clear spike in the children and teen age groups, both as suspect
 
 So, in order to test this hypothesis, we will take 2 bootstrap samples for each iteration, one from all gun incidents and another from only accidental/negligent discharge incidents. We'll find the proportion of underage victims in each sample, then record the difference in the proportions (all gun incidents - accidental/negligent discharge incidents). Iterate through this process 1000 times, and this is the distribution we find:
 
-![](images/bootstrap_sample_proportion_differences.png)
+Null Hypothesis: p2 - p1 = 0
+Alternative Hypothesis: p2 - p1 > 0
+alpha = 0.05
+![](images/bootstrap2.png)
 
-A quick glance tells you with virtual certainty that there is, in fact, a significant difference between these two proportions. In fact, we can say with 95% confidence that the true difference in proportions between these populations is between .206 and .234. So, the takeaway here is that, if we are told that a gun incident is an accidental/negligent discharge, the probability that the victim is underage increases by at least 20%. 
+As we can see, the null hypothesis of a mean difference of 0 is nowhere near our sampling distribution. In fact, we can say with 95% confidence that the true difference in proportions between these populations is between .206 and .236. So, the takeaway here is that, if we are told that a gun incident is an accidental/negligent discharge, the probability that the victim is underage increases by at least 20%. 
 
 ## Future avenues of exploration / Limitations
 
