@@ -79,6 +79,7 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
  ### Hypothesis Test:
   - Null Hypothesis: The mean death rate of assault weapon shooting incidents is the same as the mean death rate of all shooting incidents.
   - Alternative Hypothesis: The mean death rate of assault weapon shooting incidents is not the same as the mean death rate of all shooting incidents.
+  - Significance Level: 0.05
 
 Let's perform this test with an old-school Central Limit Theorem approach. We can assume that the distribution of sample means is going to be normally distributed with a sufficient sample size and number of samples, so let's make a normal distribution with our sample mean as the mean and our standard deviation being the standard error (sample standard deviation/square root of sample size). Let's first take a look at the distribution of death rate in all shooting incidents:
 
@@ -119,7 +120,7 @@ Null Hypothesis: p2 - p1 = 0
 
 Alternative Hypothesis: p2 - p1 > 0
 
-alpha = 0.05
+Significance Level = 0.05
 
 ![](images/bootstrap2.png)
 
