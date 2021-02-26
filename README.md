@@ -13,6 +13,8 @@ Furthermore, the vast majority of incidents have more detailed information:
   - longitude and latitude of the incident location
   - status of victims/suspects post-incident (arrested, unharmed, etc.)
 
+Quick Note: A portion of the incidents logged in the data set are classified as non-shooting incidents. Unless otherwise specified, we'll filtering out non-shooting related incidents.
+
 The dataset can be found here: https://github.com/jamesqo/gun-violence-data
 
 ## Areas of Interest
@@ -42,7 +44,7 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
  In order to test this hypothesis, we need to create a table that contains our observed and expected values for gun deaths:
  <img src="images/predicted_observed_dataframe.png" width="900" height="800">
  
- Our answer may already be quite clear, but let's apply a chi-squared test using our 'observed_deaths' column as our observed frequencies and our 'predicted_deaths' column as our expected frequencies:
+ Let's apply a chi-squared test using our 'observed_deaths' column as our observed frequencies and our 'predicted_deaths' column as our expected frequencies:
  ![](images/chi-squared.png)
  
  With such a large test statistic, our p-value is virtually zero. This allows us to reject the null hypothesis that a state's population alone is a sufficient predictor of gun violence deaths. Here are a couple more geographical visualizations that may help further drive home this point:
@@ -84,6 +86,12 @@ Let's perform this test with an old-school Central Limit Theorem approach. We ca
 
 Here, we see a very tight spread centered at about .31 deaths per incident. It makes sense, given our very large sample size of over 190,000, that this distribution has a small standard deviation. Let's now see how this compares to our distribution for assault weapon incidents.
 
+Null: mu1 = mu2
+
+Alternative: mu2 > mu1
+
+alpha = 0.05
+
 ![](images/CLT_both.png)
 
 Here we see a pretty clear picture. The assault weapon distribution clearly has a larger spread, a combination of the fact that the sample size is much smaller (just under 800) and that assault weapon incidents may have naturally a higher degree of variability in death rates. Nevertheless, it's visually clear that these two distributions don't meaningfully overlap. But just for good measure, let's do a Welch's t-test:
@@ -112,8 +120,11 @@ We see a pretty clear spike in the children and teen age groups, both as suspect
 So, in order to test this hypothesis, we will take 2 bootstrap samples for each iteration, one from all gun incidents and another from only accidental/negligent discharge incidents. We'll find the proportion of underage victims in each sample, then record the difference in the proportions (all gun incidents - accidental/negligent discharge incidents). Iterate through this process 1000 times, and this is the distribution we find:
 
 Null Hypothesis: p2 - p1 = 0
+
 Alternative Hypothesis: p2 - p1 > 0
+
 alpha = 0.05
+
 ![](images/bootstrap2.png)
 
 As we can see, the null hypothesis of a mean difference of 0 is nowhere near our sampling distribution. In fact, we can say with 95% confidence that the true difference in proportions between these populations is between .206 and .236. So, the takeaway here is that, if we are told that a gun incident is an accidental/negligent discharge, the probability that the victim is underage increases by at least 20%. 
