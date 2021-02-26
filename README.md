@@ -55,6 +55,8 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
  ![](images/kde_map.jpeg)
  
  
+ And 
+ 
  ## How does the death rate change, if at all, when an assault weapon is used?
  
  One of the biggest issues surrounding gun legislation in the past few years is the regulation of assault weapons. Weapons like AR-15s, AK-47s, or any variant of assault rifle, at least anecdotally, seem to be involved in the deadliest, most horrific gun incidents in the country. So let's explore the topic with statistical testing to answer a very simple question: Are gun incidents more lethal when an assault weapon is used? 
@@ -100,7 +102,14 @@ A pretty stark contrast here. Adult men are by far the most likely suspects in a
 
 ![](images/demographic_breakdown_accidents.png)
 
-We see a pretty clear spike in the children and teen age groups, both as suspects and even more so as victims. But just how significant is this difference? Thinking about it in Bayesian terms, how much might we want to update our prior beliefs about the likelihood of different age groups being the victim if we now know that an incident involved accidental/negligent discharge? So let's do another hypothesis test
+We see a pretty clear spike in the children and teen age groups, both as suspects and even more so as victims. But just how significant is this difference? Thinking about it in Bayesian terms, how much might we want to update our prior beliefs about the likelihood of different age groups being the victim if we now know that an incident involved accidental/negligent discharge? So let's do another test, but this time, we'll be constructing a confidence interval of the difference in sample proportions using bootstrapping!
 
-### Hypothesis Test: 
-  - Null Hypothesis: 
+### Hypothesis Test and Confidence Interval: 
+  - Null Hypothesis: The sample proportion of underage victims (children and teens) of all gun incidents is equivalent to the sample proportion of underage victims of accidental/negligent discharge incidents.
+  - Alternative Hypothesis: The proportion of underage victims of accidental/negligent discharges is higher than the proportion of underage victims of all gun incidents.
+
+So, in order to test this hypothesis, we will take 2 bootstrap samples for each iteration, one from all gun incidents and another from only accidental/negligent discharge incidents. We'll find the proportion of underage victims in each sample, then record the difference in the proportions (all gun incidents - accidental/negligent discharge incidents). Iterate through this process 1000 times, and this is the distribution we find:
+
+![](images/bootstrap_sample_proportion_differences.png)
+
+A quick glance tells you with virtual certainty that there is, in fact, a significant difference between these two proportions. In fact, we can say with 95% confidence that the true difference in proportions between these populations is between .206 and .234. So, the takeaway here is that, if we are told that a gun incident is an accidental/negligent discharge, the probability that the victim is underage increases by at least 20%. 
