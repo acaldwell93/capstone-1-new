@@ -82,9 +82,11 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
 
 Let's perform this test with an old-school Central Limit Theorem approach. We can assume that the distribution of sample means is going to be normally distributed with a sufficient sample size and number of samples, so let's make a normal distribution with our sample mean as the mean and our standard deviation being the standard error (sample standard deviation/square root of sample size). Let's first take a look at the distribution of death rate in all shooting incidents:
 
+
 ![](images/CLT_all_incidents_only.png)
 
-Here, we see a very tight spread centered at about .31 deaths per incident. It makes sense, given our very large sample size of over 190,000, that this distribution has a small standard deviation. Let's now see how this compares to our distribution for assault weapon incidents.
+
+Here, we see a very tight spread centered at about .31 deaths per incident. It makes sense, given our very large sample size of over 190,000, that this distribution has a small standard deviation. Were we to be comparing this with a single sample mean, we would surpass our significance level and reject the null hypothesis if we observed a value greater than .312. Let's now see how this compares to our distribution for assault weapon incidents.
 
 ![](images/CLT_both.png)
 
