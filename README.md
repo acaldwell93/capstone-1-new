@@ -40,7 +40,7 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
   - Alternative Hypothesis: Gun-related deaths are not directly proportional / cannot be sufficiently explained or predicted by population size.
  
  In order to test this hypothesis, we need to create a table that contains our observed and expected values for gun deaths:
- ![](images/predicted_observed_dataframe.png)
+ <img src="images/predicted_observed_dataframe.png" width="900" height="800">
  
  Our answer may already be quite clear, but let's apply a chi-squared test using our 'observed_deaths' column as our observed frequencies and our 'predicted_deaths' column as our expected frequencies:
  ![](images/chi-squared.png)
@@ -55,7 +55,9 @@ Much of the map seems unchanged, but we see some shifting here, particularly in 
  ![](images/kde_map.jpeg)
  
  
- And 
+ And finally, here's a quick look at the states with the highest and lowest differences between the number of deaths observed and the number of deaths predicted by population:
+ 
+ <img src="images/highest_lowest.jpg" width="700" height="700">
  
  ## How does the death rate change, if at all, when an assault weapon is used?
  
@@ -113,3 +115,7 @@ So, in order to test this hypothesis, we will take 2 bootstrap samples for each 
 ![](images/bootstrap_sample_proportion_differences.png)
 
 A quick glance tells you with virtual certainty that there is, in fact, a significant difference between these two proportions. In fact, we can say with 95% confidence that the true difference in proportions between these populations is between .206 and .234. So, the takeaway here is that, if we are told that a gun incident is an accidental/negligent discharge, the probability that the victim is underage increases by at least 20%. 
+
+## Future avenues of exploration / Limitations
+
+ - Want to delve deeper into the cities with the highest density of gun violence per capita and explore more about what's going on there. Maybe include controls/testing for differences in how law enforcement operates in these cities vs. other cities. 
